@@ -1,9 +1,10 @@
 from mcp.server.fastmcp import FastMCP
 
-
+# name of the mcp server
 mcp=FastMCP("math")
 
 @mcp.tool()
+# add tool to the mcp server
 def add(a:int,b:int)->int:
     """_summary_
 
@@ -31,4 +32,6 @@ def multiply(a:int,b:int)->int:
     return a*b
 
 if __name__=="__main__":
-    mcp.run(transport="stdio")
+    # stdio is the transport protocol for the mcp server. Alternatives could be streamable-http, http, websocket, etc.
+    # use stdio for local development and for internet use http
+    mcp.run(transport="stdio") 

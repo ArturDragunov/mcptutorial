@@ -1,17 +1,17 @@
 from mcp.server.fastmcp import FastMCP
-
+# with MCP we create a server
 mcp = FastMCP("weather")
 
 @mcp.tool()
-async def get_weather(lcation:str)->str:
+async def get_weather(location:str)->str:
     """    
     Args:
-        lcation (str): _description_
+        location (str): _description_
 
     Returns:
         str: _description_
     """
-    return "weather in banglore is raniy"
+    return "weather in banglore is rainy"
 
 if __name__=="__main__":
-    mcp.run(transport="streamable-http")
+    mcp.run(transport="streamable-http") # and here we create transportation protocol
